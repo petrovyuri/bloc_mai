@@ -1,7 +1,6 @@
+import 'package:bloc_mai/domain/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../domain/state/counter_cubit.dart';
 
 class CounterScreen extends StatelessWidget {
   const CounterScreen({Key? key}) : super(key: key);
@@ -31,10 +30,10 @@ class _CounterScreenView extends StatelessWidget {
             const Text(
               'You have pushed the button this many times:',
             ),
-            BlocBuilder<CounterCubit, int>(
+            BlocBuilder<CounterCubit, CounterState>(
               builder: (context, state) {
                 return Text(
-                  state.toString(),
+                  state.counter.toString(),
                   style: Theme.of(context).textTheme.headline4,
                 );
               },

@@ -7,10 +7,10 @@ abstract class CounterState {
   final int counter;
 }
 
-class CounterInitial extends CounterState {
-  const CounterInitial() : super(0);
+class CounterInitialState extends CounterState {
+  const CounterInitialState() : super(0);
 }
 
-class CounterChanged extends CounterState {
-  const CounterChanged(super.counter);
+class CounterChangedState extends CounterState {
+  const CounterChangedState(super.counter);
 }

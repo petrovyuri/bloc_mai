@@ -1,4 +1,4 @@
-import 'package:bloc_mai/domain/cubit/counter_cubit.dart';
+import 'package:bloc_mai/domain/bloc/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -42,7 +42,8 @@ class _CounterScreenView extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => context.read<CounterCubit>().increment(),
+        onPressed: () =>
+            context.read<CounterCubit>().add(CounterChangedEvent()),
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.

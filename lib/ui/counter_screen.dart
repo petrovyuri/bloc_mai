@@ -1,4 +1,4 @@
-import 'package:bloc_mai/domain/bloc/counter_cubit.dart';
+import 'package:bloc_mai/domain/bloc/counter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,7 +8,7 @@ class CounterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CounterCubit(),
+      create: (context) => CounterBloc(),
       child: const _CounterScreenView(),
     );
   }
@@ -30,7 +30,7 @@ class _CounterScreenView extends StatelessWidget {
             const Text(
               'You have pushed the button this many times:',
             ),
-            BlocBuilder<CounterCubit, CounterState>(
+            BlocBuilder<CounterBloc, CounterState>(
               builder: (context, state) {
                 return Text(
                   state.counter.toString(),
@@ -42,8 +42,7 @@ class _CounterScreenView extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () =>
-            context.read<CounterCubit>().add(CounterChangedEvent()),
+        onPressed: () => context.read<CounterBloc>().add(CounterChangedEvent()),
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.

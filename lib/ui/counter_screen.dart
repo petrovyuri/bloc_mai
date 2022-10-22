@@ -42,7 +42,8 @@ class _CounterScreenView extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => context.read<CounterBloc>().add(CounterChangedEvent()),
+        onPressed: () =>
+            context.read<CounterBloc>().add(CounterIncrementedEvent()),
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.

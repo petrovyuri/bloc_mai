@@ -59,7 +59,7 @@ class _CounterScreenView extends StatelessWidget {
               child: FloatingActionButton(
                 onPressed: () =>
                     context.read<CounterBloc>().add(CounterDecrementedEvent()),
-                tooltip: 'Increment',
+                tooltip: 'Decrement',
                 child: const Icon(Icons.remove),
               ),
             ),

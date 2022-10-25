@@ -57,7 +57,7 @@ class _CounterScreenView extends StatelessWidget {
               alignment: Alignment.bottomLeft,
               child: FloatingActionButton(
                 onPressed: () => context.read<CounterCubit>().decrement(),
-                tooltip: 'Increment',
+                tooltip: 'Decrement',
                 child: const Icon(Icons.remove),
               ),
             ),

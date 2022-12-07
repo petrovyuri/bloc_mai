@@ -7,12 +7,12 @@ class CounterCubit extends Cubit<CounterState> {
   CounterCubit() : super(const CounterInitialState());
 
   void increment() {
-    try {
-      throw Exception("TEST");
-    } catch (e, stackTrace) {
-      onError(e, stackTrace);
-    }
-    // emit(CounterIncrementState(state.counter + 1));
+    // try {
+    //   throw Exception("TEST");
+    // } catch (e, stackTrace) {
+    //   onError(e, stackTrace);
+    // }
+     emit(CounterIncrementState(state.counter + 1));
   }
 
   void decrement() => emit(CounterDecrementState(state.counter - 1));

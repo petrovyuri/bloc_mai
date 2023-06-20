@@ -1,6 +1,18 @@
 part of 'counter_bloc.dart';
 
-@immutable
-abstract class CounterEvent {}
+sealed class CounterEvent extends Equatable {}
 
-class CounterIncrementedEvent extends CounterEvent {}
+/// Событие увеличения счетчика
+final class CounterIncrementPressed extends CounterEvent {
+  CounterIncrementPressed();
+  @override
+  List<Object?> get props => [];
+}
+
+/// Событие уменьшения счетчика
+final class CounterDecrementPressed extends CounterEvent {
+  CounterDecrementPressed();
+
+  @override
+  List<Object?> get props => [];
+}
